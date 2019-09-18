@@ -26,7 +26,7 @@ $(document).ready(function(){
             pageLength: 25,
             lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ], 
                              
-            ajax: "../json/pedidos.json",
+            ajax: "./json/pedidos.json",
 
             language: {
                 "sProcessing":     "Procesando...",
