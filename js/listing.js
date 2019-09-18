@@ -1,4 +1,4 @@
-screen.lockOrientation('landscape');
+/*screen.lockOrientation('landscape');*/
 $(document).ready(function(){
 	
         $.extend(true, $.fn.dataTable.defaults, {
