@@ -27,6 +27,6 @@ $(document).ready(function(){
                 header: true,
                 headerOffset: $('#fixed').height()
             },
-            ajax: "./html_public/json/pedidos.json",
+            ajax: "./json/pedidos.json",
         });
     });
