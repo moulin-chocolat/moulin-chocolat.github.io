@@ -1,0 +1,13 @@
+{
+  "name": "Moulin Chocolat, Reservas de Roscones",
+  "short_name": "Rosconapp",
+  "lang": "es-ES",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "display": "standalone",
+  "orientation": "landscape",
+  "Scope": "/",
+  "start_url": "https://moulin-chocolat.github.io/",
+ 
+  "splash_pages": null
+}
