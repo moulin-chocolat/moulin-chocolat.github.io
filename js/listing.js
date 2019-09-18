@@ -13,26 +13,29 @@ $(document).ready(function(){
 
          
                 ]
-            });
+        });
         
 
         var pedidos_table = $('#pedidos').DataTable({
-            //"dom": '<"top"i>rt<"bottom"flp><"clear">',
-            
-            scrollY:        "60vh",
-            scrollX:        true,
-			lengthChange: false,
-			pageLength: 50,               
-            ajax: "./json/pedidos.json",
-			
-			language: {
+            dom: '<"dt-top"f>rt<"dt-bottom-left"li><"dt-bottom-right"p>',
+            rowId: 0,          
+            order: [[ 1, "asc" ]],
+            scrollY:  "60vh",        
+            scrollX: true,   
+            lengthChange: true,
+            pageLength: 25,
+            lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ], 
+                             
+            ajax: "./html_public/json/pedidos.json",
+
+            language: {
                 "sProcessing":     "Procesando...",
-                "sLengthMenu":     "Mostrar _MENU_ registros",
+                "sLengthMenu":     "Filas: _MENU_",
                 "sZeroRecords":    "No se encontraron resultados",
                 "sEmptyTable":     "Ningún dato disponible en esta tabla",
-                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfo":           " _START_ - _END_ de _TOTAL_ reservas",
                 "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                "sInfoFiltered":   "(de un total de _MAX_)",
                 "sInfoPostFix":    "",
                 "sSearch":         "Buscar:",
                 "sUrl":            "",
@@ -41,8 +44,8 @@ $(document).ready(function(){
                 "oPaginate": {
                     "sFirst":    "Primero",
                     "sLast":     "Último",
-                    "sNext":     "Siguiente",
-                    "sPrevious": "Anterior"
+                    "sNext":     ">",
+                    "sPrevious": "<"
                 },
                 "oAria": {
                     "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
@@ -50,4 +53,4 @@ $(document).ready(function(){
                 }
             }
         });
-    });
+});

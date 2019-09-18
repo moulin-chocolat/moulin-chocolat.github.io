@@ -3,7 +3,7 @@ p,
 ul,
 li,
 a,
-figcaption {	
+figcaption {    
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -12,9 +12,16 @@ h2,
 h3,
 h4,
 h5,
-h6{
-	font-family: 'Playfair Display', serif;   
+h6,
+th{
+    font-family: 'Playfair Display', serif;   
     font-weight: 700;
+}
+.dataTables_scrollHeadInner {
+width: 100% !important;
+}
+.dataTables_scrollHeadInner table {
+width: 100% !important;
 }
 .crema{background-color:#f4f4f4;}
 .nata{background-color:#eadca6;}
@@ -23,17 +30,18 @@ table {
     background-color: white;
 }
 .table thead th, .table tfoot th {
-    background-color: #e2e2e2;
+    background-color: ghostwhite;
 }
 table.dataTable thead th,
 table.dataTable tfoot th,
 table.dataTable thead td {
-    padding: 0;
+    padding: 10px;
     border-bottom: 1px solid #111;
     vertical-align: super;
     text-align: center;
-    font-size: 0.75rem;
-    min-width:48px;
+    font-size: 1rem;    
+    min-width: 92px;
+   
 }
 
 table.table-bordered.dataTable tbody td {
@@ -51,6 +59,8 @@ table.dataTable thead .sorting_desc_disabled:before {
     right: 0em;
     top: 0;
     content: "\2191";
+    font-family: auto;
+    font-size: 1.5rem;
 }
 
 table.dataTable thead .sorting:after,
@@ -60,7 +70,9 @@ table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
     right: 0.5em;
     top: 0;
-    content: "\2193";
+    content: "\2193";   
+    font-family: auto;    
+    font-size: 1.5rem;
 }
 
 table.dataTable thead>tr>th.sorting_asc,
@@ -70,6 +82,7 @@ table.dataTable thead>tr>td.sorting_asc,
 table.dataTable thead>tr>td.sorting_desc,
 table.dataTable thead>tr>td.sorting {
     padding-right: 20px;
+
 }
 
 table.dataTable {
@@ -80,7 +93,45 @@ table.dataTable {
     border-collapse: separate !important;
     border-spacing: 0;
 }
+.dt-top{
+    
+    float: right;
+}
+.dt-bottom-left{
+    width: 50%;
+    float: left;
+}
+.dt-bottom-right{
+    width: 50%;
+    float: right;
+}
+#pedidos_info{
+    padding:0;  
+}
+.custom-select-sm {
+    font-size: .65rem;
+}
+@media screen and (max-width: 767px){
+    div.dataTables_wrapper div.dataTables_length{
+        text-align: left;
+    }
+}
 
+/*
+
+#pedidos_length{
+    width: 50%;
+    float: left;
+}
+#pedidos_paginate{
+    width: 50%;
+    float: right;
+}
+#pedidos_filter{
+    width: 50%;
+    float: right;
+}
+*/
 body {
     font-size: 16px;
     background-image: url("../img/pattern2b.png");
