@@ -1,6 +1,6 @@
 /*screen.lockOrientation('landscape');*/
 $(document).ready(function(){
-	
+		$.fn.DataTable.ext.pager.numbers_length = 4;
         $.extend(true, $.fn.dataTable.defaults, {
                 'columnDefs':[
                     { orderable: false, targets: 'dt-nosort' },
