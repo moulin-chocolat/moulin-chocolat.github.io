@@ -21,15 +21,8 @@ $(document).ready(function(){
             
             scrollY:        "60vh",
             scrollX:        true,
-            scrollCollapse: true,     
-			
-            //fixedColumns: true,
-            /*
-            fixedHeader: {
-                header: true,
-                headerOffset: $('#fixed').height()
-            },
-			*/
+            "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ],          
+	
             ajax: "./json/pedidos.json",
         });
     });
