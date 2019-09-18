@@ -1,5 +1,6 @@
+screen.lockOrientation('landscape');
 $(document).ready(function(){
-
+	
         $.extend(true, $.fn.dataTable.defaults, {
                 'columnDefs':[
                     { orderable: false, targets: 'dt-nosort' },
