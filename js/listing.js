@@ -22,9 +22,7 @@ $(document).ready(function(){
             scrollY:        "60vh",
             scrollX:        true,
 			lengthChange: false,
-			pageLength: 50     
-            //lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ],          
-	
+			pageLength: 50,               
             ajax: "./json/pedidos.json",
         });
     });
