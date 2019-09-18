@@ -21,7 +21,9 @@ $(document).ready(function(){
             
             scrollY:        "60vh",
             scrollX:        true,
-            "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ],          
+			lengthChange: false,
+			pageLength: 50     
+            //lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ],          
 	
             ajax: "./json/pedidos.json",
         });
