@@ -69,13 +69,12 @@ tbody{
 table.dataTable thead th,
 table.dataTable tfoot th,
 table.dataTable thead td {
-    padding: 10px 2.6px;
+    padding: 10px 2px;
     border-bottom: 1px solid #111;
     vertical-align: super;
     text-align: center;
-    font-size: .65rem;    
-    
-   
+    font-size: .65rem;
+    min-width: 36px;
 }
 
 table.table-bordered.dataTable tbody td {
@@ -87,13 +86,14 @@ table.table-bordered.dataTable tbody td {
 }
 th.text-left,td.text-left {
     padding-left: 5px!important;
+        min-width: 114px!important;
 }
 table.dataTable thead .sorting:before,
 table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:before {
-    right: 0.35em;
+    right: 0.25em;
     top: 0;
     content: "\2191";
     font-family: auto;
@@ -172,7 +172,7 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .custom-select-sm {
     font-size: .65rem;
-	    min-width: 52px;
+        min-width: 52px;
 }
 @media screen and (max-width: 767px){
     div.dataTables_wrapper div.dataTables_length{

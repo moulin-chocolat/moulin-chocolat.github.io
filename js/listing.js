@@ -23,7 +23,8 @@ $(document).ready(function(){
 
     let pedidos_table = $('#pedidos').DataTable({
             dom: '<"dt-top"f>rt<"dt-bottom-left"li><"dt-bottom-right"p>',
-            rowId: 0,           
+            rowId: 0,
+           //dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
             order: [[ 1, "asc" ]],
             scrollY:  "70vh",        
             scrollX: true,   
@@ -39,7 +40,7 @@ $(document).ready(function(){
                 "sZeroRecords":    "No se encontraron resultados",
                 "sEmptyTable":     "Ningún dato disponible en esta tabla",
                 "sInfo":           "_START_-_END_ de _TOTAL_ reservas",
-                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoEmpty":      "Sin resultados ",
                 "sInfoFiltered":   "(de un total de _MAX_)",
                 "sInfoPostFix":    "",
                 "sSearch":         "Buscar:",
@@ -107,6 +108,7 @@ $(document).ready(function(){
                         select.append( '<option value="'+d+'">'+d+'</option>' );
                     });
                 });
+                $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
             }
     });
 
