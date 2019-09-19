@@ -18,116 +18,104 @@
         <meta property="og:description" content="{{description}}">
         <meta property="og:image" content="{{og_image}}">
         -->
+		<link rel="manifest" href="./manifest.json">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Playfair+Display:700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <link rel="stylesheet" href="./css/home-style.css" />
 		
-		 </head>
-<body class="">
+	</head>
+	<body class="">
+		<main class="container-fluid">			
 
- <section class="container-fluid">
-        <h1 class="text-center">RESERVAS:</h1>
+			<table id="pedidos" class="display table table-bordered table-striped table-hover" style="width:100%">
+				<thead>
+					<tr>
+						<th scope="col" rowspan="2" class="dt-nosearch">nº Pedido</th>
+						<th scope="col" rowspan="2" class="">Día</th>
+						<th scope="col" rowspan="2" class="">Hora</th>
+						<th scope="col" rowspan="2" class="">Cliente</th>
+						<th scope="col" rowspan="2" class="">Teléfono</th>
 
-        <table id="pedidos" class="display table table-bordered table-hover" style="width:100%">
-            <thead>
-                <tr>
-                    <th scope="col" rowspan="2" class="dt-nosearch">nº Pedido</th>
-                    <th scope="col" rowspan="2" class="dt-nosearch">Día</th>
-                    <th scope="col" rowspan="2" class="dt-nosearch">Hora</th>
-                    <th scope="col" rowspan="2" class="">Cliente</th>
-                    <th scope="col" rowspan="2" class="">Teléfono</th>
+						<th scope="col" colspan="4">Roscón 1/4</th>
+						<th scope="col" colspan="4">Roscón 1/2</th>
 
-                    <th scope="col" colspan="4">Roscón 1/4</th>
-                    <th scope="col" colspan="4">Roscón 1/2</th>
+						<th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Gallete</th>
+						<th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Botella Cacao</th>
+						<th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Choco Caliente</th>
+						<th scope="col" rowspan="2" class="dt-nosearch">Pagado</th>                        
+					</tr>
 
-                    <th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Gallete</th>
-                    <th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Botella Cacao</th>
-                    <th scope="col" rowspan="2" class="dt-nosort dt-nosearch">Choco Caliente</th>
-                    <th scope="col" rowspan="2" class="dt-nosearch">Pagado</th>                        
-                </tr>
+					<tr>
+						<th scope="col" class="dt-nosort">Sin Relleno</th>
+						<th scope="col" class="dt-nosort">Nata</th>
+						<th scope="col" class="dt-nosort">Trufa</th>
+						<th scope="col" class="dt-nosort">Crema</th>  
 
-                <tr>
-                    <th scope="col" class="dt-nosort">Sin Relleno</th>
-                    <th scope="col" class="dt-nosort">Nata</th>
-                    <th scope="col" class="dt-nosort">Trufa</th>
-                    <th scope="col" class="dt-nosort">Crema</th>  
+						<th scope="col" class="dt-nosort">Sin Relleno</th>
+						<th scope="col" class="dt-nosort">Nata</th>
+						<th scope="col" class="dt-nosort">Trufa</th>
+						<th scope="col" class="dt-nosort">Crema</th>              
+					</tr>
+				  
 
-                    <th scope="col" class="dt-nosort">Sin Relleno</th>
-                    <th scope="col" class="dt-nosort">Nata</th>
-                    <th scope="col" class="dt-nosort">Trufa</th>
-                    <th scope="col" class="dt-nosort">Crema</th>              
-                </tr>
-              
+				</thead>
+				<tbody>
+				   
+				</tbody>
+				<tfoot>
+					<tr>
+						<th scope="col">nº Pedido</th>
+						<th scope="col">Día</th>
+						<th scope="col">Hora</th>
+						<th scope="col">Cliente</th>
+						<th scope="col">Teléfono</th>
 
-            </thead>
-            <tbody>
+						<th scope="col">Sin Relleno</th>
+						<th scope="col">Nata</th>
+						<th scope="col">Trufa</th>
+						<th scope="col">Crema</th>  
 
-                <tr>
-                    <td>0</td>
-                    <td></td>
-                    <td ></td>
-                   
-                    <td><input type="text" class="form-control" id="cliente" name="cliente" placeholder="Cliente" /></td>
-                    <td><input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" /></td>
+						<th scope="col">Sin Relleno</th>
+						<th scope="col">Nata</th>
+						<th scope="col">Trufa</th>
+						<th scope="col">Crema</th>   
 
-                    <td></td>
-                    <td></td>
+						<th scope="col">Gallete</th>
+						<th scope="col">Botella Cacao</th>
+						<th scope="col">Choco Caliente</th>
+						<th scope="col">Pagado</th>   
+						
+					</tr>
 
-                    <td></td>
-                    <td></td>
-                  
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+				</tfoot>
+			</table>			
+			<hr style="clear: both;visibility: hidden;"/>
+		</main>
 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><div class="form-check"><input class="form-check-input position-static" type="checkbox" name="pagado" id="pagado"></div></td>
-                 
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th scope="col">nº Pedido</th>
-                    <th scope="col">Día</th>
-                    <th scope="col">Hora</th>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Teléfono</th>
-
-                    <th scope="col">Sin Relleno</th>
-                    <th scope="col">Nata</th>
-                    <th scope="col">Trufa</th>
-                    <th scope="col">Crema</th>  
-
-                    <th scope="col">Sin Relleno</th>
-                    <th scope="col">Nata</th>
-                    <th scope="col">Trufa</th>
-                    <th scope="col">Crema</th>   
-
-                    <th scope="col">Gallete</th>
-                    <th scope="col">Botella Cacao</th>
-                    <th scope="col">Choco Caliente</th>
-                    <th scope="col">Pagado</th>   
-                    
-                </tr>
-
-            </tfoot>
-        </table>
-<hr style="clear: both;"/>
-        <figure style="width:320px;background-color:#333;margin: 0 auto;margin-bottom:20px;"><img src="./img/logo.png" class="img-fluid"> </figure>
-             
-
-</section>
-
-    
-    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-   
-    <script type="text/javascript" charset="utf8" src="./js/listing.js"></script>
-</body>
+		<footer class="container-fluid">
+			<div class="row text-left">         
+				<div class="col-md-8 col-sm-12">  
+					<div class="titles">
+						<hr />
+						<h1 class="text-center">ROSCONES</h1>
+						<h2 class="text-center">Lista de Reservas</h2>
+						<h3 class="text-center">Moulin Chocolat</h3>
+						<hr />
+					</div>           
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<figure style="max-width:260px;background-color:#795548;margin: 0 auto;margin-bottom:20px;"><img src="./img/logo.png" class="img-fluid"> </figure>
+				</div>  
+			</div>
+		</footer>
+		
+		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>  
+		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	   
+		<script type="text/javascript" charset="utf8" src="./js/listing.js"></script>
+	</body>
 </html>

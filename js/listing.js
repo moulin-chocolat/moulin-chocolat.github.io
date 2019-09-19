@@ -1,30 +1,35 @@
-/*screen.lockOrientation('landscape');*/
 $(document).ready(function(){
-		$.fn.DataTable.ext.pager.numbers_length = 4;
-        $.extend(true, $.fn.dataTable.defaults, {
+    $.fn.DataTable.ext.pager.numbers_length = 4;
+
+    $.extend(true, $.fn.dataTable.defaults, {
                 'columnDefs':[
+                    { visible: false, targets: [ 0 ] },
                     { orderable: false, targets: 'dt-nosort' },
-                    { searchable: false, "targets": 'dt-nosearch' },
-                    { width: 600, targets: [3] },
-                    { width: 300, targets: [4] },
-                    { className: "nata", "targets": [ 8, 12 ] },
-                    { className: "trufa", "targets": [ 7, 11 ] },
-                    { className: "crema", "targets": [ 6, 10 ] },
+                    { searchable: false, targets: 'dt-nosearch' },                  
+                  
+                    { className: "text-left", targets: [ 3 ] },
+                    { className: "crema", targets: [ 8, 12 ] },
+                    { className: "trufa", targets: [ 7, 11 ] },
+                    { className: "nata", targets: [ 6, 10 ] },
+                    { className: "sinrelleno", targets: [ 5, 9 ] },      
 
-         
+                    { className: "footerSum", targets: [ 5,6,7,8,9,10,11,12,13,14,15 ] }, 
+                    
+                    { targets: [ 1 ], orderData: [ 1, 2, 3 ] },
+                    { targets: [ 2 ], orderData: [ 2, 1, 3 ] },                   
+                    { targets: [ 16 ], orderData: [ 16, 1, 2, 3 ] },
                 ]
-        });
-        
+    });
 
-        var pedidos_table = $('#pedidos').DataTable({
+    let pedidos_table = $('#pedidos').DataTable({
             dom: '<"dt-top"f>rt<"dt-bottom-left"li><"dt-bottom-right"p>',
-            rowId: 0,          
+            rowId: 0,           
             order: [[ 1, "asc" ]],
-            scrollY:  "60vh",        
+            scrollY:  "70vh",        
             scrollX: true,   
             lengthChange: true,
-            pageLength: 25,
-            lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"] ], 
+            pageLength: -1,
+            lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "TODAS"] ], 
                              
             ajax: "./json/pedidos.json",
 
@@ -33,7 +38,7 @@ $(document).ready(function(){
                 "sLengthMenu":     "Filas: _MENU_",
                 "sZeroRecords":    "No se encontraron resultados",
                 "sEmptyTable":     "Ningún dato disponible en esta tabla",
-                "sInfo":           " _START_ - _END_ de _TOTAL_ reservas",
+                "sInfo":           "_START_-_END_ de _TOTAL_ reservas",
                 "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
                 "sInfoFiltered":   "(de un total de _MAX_)",
                 "sInfoPostFix":    "",
@@ -51,6 +56,72 @@ $(document).ready(function(){
                     "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                     "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                 }
+            },
+            "footerCallback": function () {
+                var api = this.api();
+              
+                api.columns('.footerSum').every(function () {
+                    var elem = $(this);
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+                    var total = api
+                        .column( this.index() )
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+              
+                    var pageTotal = api
+                        .column( this.index(), { page: 'current' } )
+                        .data()
+                        .reduce(function (a, b) {
+                             return intVal(a) + intVal(b);
+                        }, 0);
+              
+                    $(this.footer()).html( '<p class="thpsum">'+pageTotal +'</p> ('+ total +')' );
+                });
+            },
+
+            initComplete: function () {
+
+                this.api().columns([1,2,16]).every( function () {
+                    var column = this;
+                    var select = $('<select class="dropup"><option value=""></option></select>')
+                        .appendTo( $(column.footer()).empty() )
+                        //.appendTo( $(column.header()) )
+                        .on( 'change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );                        
+                            column
+                                .search( val ? '^'+val+'$' : '', true, false )
+                                .draw();
+                        });
+     
+                    column.data().unique().sort().each( function ( d, j ) {                       
+                        select.append( '<option value="'+d+'">'+d+'</option>' );
+                    });
+                });
             }
-        });
+    });
+
+    $.fn.dataTable.Api.register( 'sum()', function ( ) {
+            return this.flatten().reduce( function ( a, b ) {
+                if ( typeof a === 'string' ) {
+                    a = a.replace(/[^\d.-]/g, '') * 1;
+                }
+                if ( typeof b === 'string' ) {
+                    b = b.replace(/[^\d.-]/g, '') * 1;
+                }
+         
+                return a + b;
+            }, 0 );
+    });
+    //$.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
+    
 });
