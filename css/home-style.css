@@ -3,101 +3,127 @@ p,
 ul,
 li,
 a,
-figcaption {    
+figcaption {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-th{
-    font-family: 'Playfair Display', serif;   
+th {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
-.titles{
-    height: 280px;
-    padding-top: 32px;
+body {
+    background-image: url("../img/pattern2b.png");
+    background-repeat: repeat;
 }
-.h1, h1 {
+.titles {
+    height: 280px;
+    padding-top: 8px;
+}
+
+.h1,
+h1 {
     font-size: 3.6rem;
     color: #794854;
 }
-.h2, h2{
+
+.h2,
+h2 {
     font-size: 2.4rem;
-    color:#486C79;
+    color: #486C79;
 }
-.h3, h3{
+
+.h3,
+h3 {
     color: rgb(121, 85, 72);
 }
-.dataTables_scrollHeadInner {
-width: 100% !important;
-}
-.dataTables_scrollHeadInner table {
-width: 100% !important;
-}
-tfoot th {
-   font-family: 'Open Sans', sans-serif;
-   font-weight: 700;
-   font-size: 0.6rem;
+
+tbody {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-.crema{
-    background-color:#eadca6;
+.custom-select {
+    min-width: 50px;
+    font-family: open-sans;
+    font-size: .6rem;
 }
-.nata{
-    background-color:floralwhite;
+th.text-left{
+    text-align: center!important;
 }
-.trufa{
-    background-color:#d5ab9c;
-}
-.sinrelleno{
-    background-color:#eff;
-}
-
-thead th.sinrelleno{text-decoration: line-through;}
-
-.table thead th, .table tfoot th {
-    background-color: ghostwhite;
-}
-
-tbody{
-    background-color: rgba(255,255,255,0.7);
-}
-table.dataTable thead th,
-table.dataTable tfoot th,
-table.dataTable thead td {
-    padding: 10px 2px;
-    border-bottom: 1px solid #111;
-    vertical-align: super;
-    text-align: center;
-    font-size: .65rem;
-    min-width: 36px;
+table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting {
+    padding-right: 0;
+	font-family: auto;
 }
 
-table.table-bordered.dataTable tbody td {
-    border-bottom-width: 0;
-    padding: 10px 0;
-    text-align: center;
+.table thead th {
     vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table thead th,
+.table tfoot th {
+    background-color: ghostwhite;
+	font-size: 0.6rem!important;
+}
+
+.table td,
+.table th {
+    padding: .25rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+	text-align:center;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #dee2e6;
     font-size: 0.7rem;
 }
-th.text-left,td.text-left {
-    padding-left: 5px!important;
-        min-width: 114px!important;
+/*
+tfoot th {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    
+}
+*/
+.crema {
+    background-color: #eadca6;
+}
+
+.nata {
+    background-color: floralwhite;
+}
+
+.trufa {
+    background-color: #d5ab9c;
+}
+
+.sinrelleno {
+    background-color: #eff;
+}
+
+thead th.sinrelleno {
+    text-decoration: line-through;
 }
 table.dataTable thead .sorting:before,
 table.dataTable thead .sorting_asc:before,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_asc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:before {
-    right: 0.25em;
+    right: .25rem;
     top: 0;
     content: "\2191";
-    font-family: auto;
-    font-size: 1.5rem;
 }
 
 table.dataTable thead .sorting:after,
@@ -105,124 +131,57 @@ table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
-    right: 0;
-    top: 0;
-    content: "\2193";   
-    font-family: auto;    
-    font-size: 1.5rem;
+    right: 0.25em;
+    bottom: 0;
+    content: "\2193";
 }
 
-table.dataTable thead>tr>th.sorting_asc,
-table.dataTable thead>tr>th.sorting_desc,
-table.dataTable thead>tr>th.sorting,
-table.dataTable thead>tr>td.sorting_asc,
-table.dataTable thead>tr>td.sorting_desc,
-table.dataTable thead>tr>td.sorting {
-    padding-right: 20px;
-
-}
-
-table.dataTable {
-    clear: both;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    max-width: none !important;
-    border-collapse: separate !important;
-    border-spacing: 0;
-}
-#pedidos th{line-height: 0;border:0;height: 0;}
-th select{
-    width: 80%;
-}
-.thpsum{
+.thpsum {
     color: blue;
     font-size: .7rem;
     margin: 0;
 }
-.dt-top{
-    
+
+.dt-top {
     float: right;
 }
-.dt-bottom-left{
+
+.dt-bottom-left {
     width: 50%;
     float: left;
 }
-.dt-bottom-right{
+
+.dt-bottom-right {
     width: 50%;
     float: right;
 }
-#pedidos_filter{
-    margin-top: 0.25em;
+
+#pedidos_filter {
+   padding-top: .25rem;
 }
-#pedidos_info{
-    padding-top: 0.5rem;
+#pedidos_filter label{margin:0;}
+#pedidos_info {
+    text-align: left;
 }
-#pedidos_paginate{
-    padding-top: 0.3rem;
+
+#pedidos_paginate {
+   
 }
-#pedidos_length{
-    padding-top: 0.4rem;
+
+#pedidos_length {
+    
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0;
+    white-space: nowrap;
 }
 div.dataTables_wrapper div.dataTables_length select {
-    width: auto;
+    width: 72px;
     display: inline-block;
-    /*
-    padding: 18px 14px;
-    */
 }
-.custom-select-sm {
-    font-size: .65rem;
-        min-width: 52px;
-}
-@media screen and (max-width: 767px){
-    div.dataTables_wrapper div.dataTables_length{
+
+@media screen and (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_length {
         text-align: left;
     }
-}
-.btn{
-    width: 40px;
-    margin-bottom: 0.25rem;
-}
-body {
-    font-size: 16px;
-    background-image: url("../img/pattern2b.png");
-    background-repeat: repeat;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0;
-    /* <-- Apparently some margin are still there even though it's hidden */
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-    /* Firefox */
-}
-
-.tdUdbuttons {
-    display: inline-flex;
-    width: 100%;
-}
-
-.tdUdbuttons input {
-    border-radius: 0;
-    min-width: 30px;
-    padding: 5px;
-}
-
-.Udbuttons {
-    display: flex;
-    flex-flow: column;
-}
-
-.subUd,
-.addUd {
-    height: 19px;
-    width: 19px;
-    line-height: 3px;
-    padding: 3px;
-    border-radius: 0;
 }
