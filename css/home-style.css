@@ -172,6 +172,7 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .custom-select-sm {
     font-size: .65rem;
+	    min-width: 52px;
 }
 @media screen and (max-width: 767px){
     div.dataTables_wrapper div.dataTables_length{
