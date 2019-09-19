@@ -91,7 +91,7 @@ $(document).ready(function(){
 
                 this.api().columns([1,2,16]).every( function () {
                     var column = this;
-                    var select = $('<select class="dropup"><option value=""></option></select>')
+                    var select = $('<select class="dropup custom-select custom-select-sm form-control form-control-sm"><option value=""></option></select>')
                         .appendTo( $(column.footer()).empty() )
                         //.appendTo( $(column.header()) )
                         .on( 'change', function () {
