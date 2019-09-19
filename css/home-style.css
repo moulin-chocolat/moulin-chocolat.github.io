@@ -90,29 +90,21 @@ table.dataTable thead>tr>td.sorting {
     border: 1px solid #dee2e6;
     font-size: 0.7rem;
 }
-/*
-tfoot th {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    
-}
-*/
 .crema {
-    background-color: #eadca6;
+    background-color: #eadca6!important;
 }
 
 .nata {
-    background-color: floralwhite;
+    background-color: floralwhite!important;
 }
 
 .trufa {
-    background-color: #d5ab9c;
+    background-color: #d5ab9c!important;
 }
 
 .sinrelleno {
-    background-color: #eff;
+    background-color: #eff!important;
 }
-
 thead th.sinrelleno {
     text-decoration: line-through;
 }
