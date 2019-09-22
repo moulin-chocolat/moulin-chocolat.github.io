@@ -73,6 +73,7 @@ $(document).ready(function(){
                     "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                 }
             },
+			/*
             "footerCallback": function () {
                 var api = this.api();
               
@@ -102,7 +103,7 @@ $(document).ready(function(){
                     $(this.footer()).html( '<p class="thpsum">'+pageTotal +'</p> ('+ total +')' );
                 });
             },
-
+*/
             initComplete: function () {
 
                 this.api().columns([1,2,16]).every( function () {
