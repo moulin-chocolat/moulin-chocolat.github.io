@@ -41,12 +41,13 @@ $(document).ready(function(){
             rowId: 0,
            //dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
             order: [[ 1, "asc" ]],
-            scrollY:  "70vh",        
+            scrollY:  "65vh",   
+			searchDelay: 350,	
             scrollX: true,   
             lengthChange: true,
             pageLength: -1,
             lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "TODAS"] ], 
-            //deferRender:    true,
+            deferRender:    true,
             ajax: "./json/pedidos.json",
 
             language: {
