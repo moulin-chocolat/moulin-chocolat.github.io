@@ -1,4 +1,19 @@
 $(document).ready(function(){
+	// Deactivating distracting Text Selection:
+    // from: http://stackoverflow.com/questions/1794220/how-to-disable-mobilesafari-auto-selection
+    $.fn.extend({
+      disableSelection : function() {
+        this.each(function() {
+          this.onselectstart = function() {
+            return false;
+          };
+          this.unselectable = "on";
+          $(this).css('-moz-user-select', 'none');
+          $(this).css('-webkit-user-select', 'none');
+        });
+      }
+    });
+	
     $.fn.DataTable.ext.pager.numbers_length = 4;
 
     $.extend(true, $.fn.dataTable.defaults, {
