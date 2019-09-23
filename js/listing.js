@@ -1,19 +1,5 @@
-$(document).ready(function(){
-	// Deactivating distracting Text Selection:
-    // from: http://stackoverflow.com/questions/1794220/how-to-disable-mobilesafari-auto-selection
-    $.fn.extend({
-      disableSelection : function() {
-        this.each(function() {
-          this.onselectstart = function() {
-            return false;
-          };
-          this.unselectable = "on";
-          $(this).css('-moz-user-select', 'none');
-          $(this).css('-webkit-user-select', 'none');
-        });
-      }
-    });
-	
+$(document).ready( function() {
+
     $.fn.DataTable.ext.pager.numbers_length = 4;
 
     $.extend(true, $.fn.dataTable.defaults, {
@@ -31,7 +17,7 @@ $(document).ready(function(){
                     { className: "footerSum", targets: [ 5,6,7,8,9,10,11,12,13,14,15 ] }, 
                     
                     { targets: [ 1 ], orderData: [ 1, 2, 3 ] },
-                    { targets: [ 2 ], orderData: [ 2, 1, 3 ] },                   
+                    { targets: [ 2 ], orderData: [ 2, 1, 3 ] },
                     { targets: [ 16 ], orderData: [ 16, 1, 2, 3 ] },
                 ]
     });
@@ -74,7 +60,7 @@ $(document).ready(function(){
                     "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                 }
             },
-			/*
+			
             "footerCallback": function () {
                 var api = this.api();
               
@@ -104,7 +90,7 @@ $(document).ready(function(){
                     $(this.footer()).html( '<p class="thpsum">'+pageTotal +'</p> ('+ total +')' );
                 });
             },
-*/
+
             initComplete: function () {
 
                 this.api().columns([1,2,16]).every( function () {
